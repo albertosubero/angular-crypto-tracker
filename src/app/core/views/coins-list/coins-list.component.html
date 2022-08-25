@@ -49,7 +49,8 @@
           <td>{{ data.current_price | currency:currency:true }}</td>
           <td 
             class="is-value"
-            [ngClass]="{ 'is-low': data.price_change_percentage_24h < 0, 'is-high': data.price_change_percentage_24h > 0 }">
+            [ngClass]="{ 'is-low': data.price_change_percentage_24h < 0, 'is-high': data.price_change_percentage_24h > 0 }"
+          >
             {{ data.price_change_percentage_24h | number : '1.2-2' }}%
           </td>
           <td>{{ data.market_cap | currency:currency:true }}</td>

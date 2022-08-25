@@ -35,7 +35,10 @@ export class CoinDetailsComponent implements OnInit {
   public lineChartOptions: ChartConfiguration['options'] = {
     elements: {
       point: {
-        radius: 1
+        radius: 0
+      },
+      line: {
+        borderWidth: 2
       }
     },
     plugins: {
@@ -47,6 +50,9 @@ export class CoinDetailsComponent implements OnInit {
       x: {
         ticks: {
           color: '#8990c5',
+        },
+        grid: {
+          display: false,
         }
       },
       y: {
@@ -55,6 +61,9 @@ export class CoinDetailsComponent implements OnInit {
           callback: function(value) {
             return '$' + value;
           },
+        },
+        grid: {
+          color: '#8990c51a'
         }
       }
     },

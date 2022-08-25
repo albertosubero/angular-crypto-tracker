@@ -24,9 +24,17 @@
             <h1 class="title coin-name">
                 {{ coinData?.name }}
                 <span class="symbol">{{ coinData?.symbol }}</span>
-                <span class="price">{{ coinData?.market_data.current_price.inr | currency: currency }}</span>
+                <span class="price">
+                    {{ coinData?.market_data.current_price.inr | currency: currency }}
+                    <span 
+                        class="is-value"
+                        [ngClass]="{ 'is-low': coinData?.market_data.price_change_percentage_24h < 0, 'is-high': coinData?.market_data.price_change_percentage_24h > 0 }"
+                    >       
+                        ({{ coinData?.market_data.price_change_percentage_24h | number : '1.2-2' }}%)
+                    </span>
+                </span>
             </h1>
-            <p class="description" [innerHtml]="coinData?.description?.en.split('. ')[0]"></p>
+            <!-- <p class="description" [innerHtml]="coinData?.description?.en.split('. ')[0]"></p> -->
             <div class="chart-filters">
                 <button 
                     nz-button 
@@ -68,6 +76,15 @@
                 >
                     1 year
                 </button>
+                <span class="market-cap">
+                    Market cap {{ coinData?.market_data.market_cap.inr | currency: currency }}
+                    <span 
+                        class="is-value"
+                        [ngClass]="{ 'is-low': coinData?.market_data.market_cap_change_percentage_24h < 0, 'is-high': coinData?.market_data.market_cap_change_percentage_24h> 0 }"
+                    >       
+                        ({{ coinData?.market_data.market_cap_change_percentage_24h  | number : '1.2-2' }}%)
+                    </span>
+                </span>
             </div>
             <canvas 
                 style="width: 300px;" 
