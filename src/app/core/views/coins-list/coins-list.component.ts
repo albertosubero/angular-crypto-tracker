@@ -12,17 +12,14 @@ export class CoinsListComponent implements OnInit {
   currency: string = "USD";
   coinsData: any[] = [];
   copyCoinsData: any[] = [];
-  bannerData: any[] = [];
   constructor(private api: ApiService, private currencyService : CurrencyService, private router : Router) { }
 
   ngOnInit(): void {
     this.getAllData();
-    this.getBannerData();
     this.currencyService.getCurrency()
     .subscribe(val=>{
       this.currency = val;
       this.getAllData();
-      this.getBannerData();
     })
   }
 
@@ -31,13 +28,6 @@ export class CoinsListComponent implements OnInit {
       .subscribe(res => {
         this.coinsData = res;
         this.copyCoinsData = [...this.coinsData];
-      })
-  }
-
-  getBannerData() {
-    this.api.getTrendingCurrency(this.currency)
-      .subscribe(res => {
-        this.bannerData = res;
       })
   }
 

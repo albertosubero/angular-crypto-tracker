@@ -1,0 +1,16 @@
+<div class="marquee-container">
+    <marquee behavior="scroll" onmouseover="stop()" onmouseout="start()" loop="infinite" direction="left">
+      <div>
+        <ng-container *ngFor="let coin of bannerData">
+          <h5 class="coin-info">
+            {{ coin.symbol | uppercase }} 
+            <span 
+              class="is-value"
+              [ngClass]="{ 'is-low': coin.market_cap_change_percentage_24h < 0, 'is-high': coin.market_cap_change_percentage_24h > 0 }">
+              {{ coin.market_cap_change_percentage_24h }}%
+            </span>
+          </h5>
+      </ng-container>
+      </div>
+    </marquee>
+</div>

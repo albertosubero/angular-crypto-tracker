@@ -58,24 +58,3 @@
         border-radius: 10px;
     }
 }
-
-.marquee-container {
-    background-color: #1d2150;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px 0;
-    .coin-info {
-        color: #FFFFFF;
-        display: inline;
-        padding: 10px;
-        letter-spacing: 1px;
-        .is-value {
-            &.is-low {
-                color: #ff547e;
-            }
-            &.is-high {
-                color: #11f6e9;
-            }
-        }
-    }
-}

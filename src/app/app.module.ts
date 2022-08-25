@@ -22,6 +22,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CurrencySelectComponent } from './core/components/currency-select/currency-select.component';
 import { FooterComponent } from './core/components/footer/footer.component';
+import { MarqueeComponent } from './core/components/marquee/marquee.component';
 
 registerLocaleData(en);
 
@@ -31,7 +32,8 @@ registerLocaleData(en);
     CoinsListComponent,
     CoinDetailsComponent,
     CurrencySelectComponent,
-    FooterComponent
+    FooterComponent,
+    MarqueeComponent
   ],
   imports: [
     BrowserModule,
