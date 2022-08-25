@@ -16,6 +16,7 @@
     }
     .ant-table-tbody {
         tr {
+            cursor: pointer;
             td {
                 border-bottom: none;
                 &:first-child  {

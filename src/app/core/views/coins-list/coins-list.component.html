@@ -1,5 +1,10 @@
 <div nz-row>
-  <div nz-col nzOffset="4" nzSpan="16">
+  <div 
+    nz-col
+    [nzXs]="{ span: 22, offset: 1 }"
+    [nzMd]="{ span: 20, offset: 2 }"
+    [nzLg]="{ span: 16, offset: 4 }"
+  >
     <div class="marquee-container">
       <marquee behavior="scroll" onmouseover="stop()" onmouseout="start()" loop="infinite" direction="left">
         <div>
