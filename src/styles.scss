@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url('./assets/img/bg2.jpg');
+    background-size: 200%;
+    background-repeat: no-repeat;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background: rgb(25 29 71 / 85%);
+    }
+}
+
+.title  {
+    font-size: 30px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.ant-input {
+    border-radius: 10px;
+    border: none;
+    background-color: #1d2150;
+    color: #FFFFFF;
+    height: 40px;
+}
+
+.ant-select {
+    color: #FFFFFF;
+    &:not(.ant-select-customize-input) {
+        .ant-select-selector {
+            background-color: #1d2150;
+            border: none;
+            border-radius: 10px;
+        }
+    }
+    .ant-select-arrow {
+        color: rgb(255 255 255 / 25%);
+    }
+}

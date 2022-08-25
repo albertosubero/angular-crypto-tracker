@@ -1,0 +1,33 @@
+.general-card {
+    background-color: #1d2150;
+    border-radius: 10px;
+    padding: 20px;
+    .coin-avatar {
+        position: absolute;
+        width: 50px;
+        border-radius: 100%;
+    }
+    .coin-name {
+        margin-top: -8px;
+        margin-left: 60px;
+        position: relative;
+        .symbol {
+            display: block;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-top: -10px;
+            font-weight: 400;
+        }
+        .price  {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            font-weight: 600;
+            font-size: 26px;
+        }
+    }
+    .description  {
+        font-size: 14px;
+        color: #8990c5;
+    }
+}

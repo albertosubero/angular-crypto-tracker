@@ -1,0 +1,80 @@
+::ng-deep {
+    .ant-table {
+        background: transparent;
+        color: hsl(233, 34%, 65%);
+        letter-spacing: 1px;
+    }
+    .ant-table-thead {
+        tr {
+            th {
+                background: transparent;
+                color: #8990c5;
+                border-bottom: none;
+                font-weight: 400;
+            }
+        }
+    }
+    .ant-table-tbody {
+        tr {
+            td {
+                border-bottom: none;
+                &:first-child  {
+                    border-radius: 10px 0 0 10px;
+                    font-weight: 600;
+                }
+                &:last-child  {
+                    border-radius: 0 10px 10px 0;
+                }
+                .coin-image {
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 8px;
+                }
+                &.is-value {
+                    &.is-low {
+                        color: #ff547e;
+                    }
+                    &.is-high {
+                        color: #11f6e9;
+                    }
+                }
+            }
+        }
+    }
+
+    .ant-pagination, .ant-pagination-next button, .ant-pagination-prev button {
+        color: #FFFFFF;
+    }
+
+    .ant-pagination-disabled .ant-pagination-item-link {
+        color: rgb(255 255 255 / 25%);
+    }
+
+    .ant-pagination-simple .ant-pagination-simple-pager input {
+        background-color: #1d2150;
+        border: none;
+        width: 40px;
+        border-radius: 10px;
+    }
+}
+
+.marquee-container {
+    background-color: #1d2150;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+    .coin-info {
+        color: #FFFFFF;
+        display: inline;
+        padding: 10px;
+        letter-spacing: 1px;
+        .is-value {
+            &.is-low {
+                color: #ff547e;
+            }
+            &.is-high {
+                color: #11f6e9;
+            }
+        }
+    }
+}

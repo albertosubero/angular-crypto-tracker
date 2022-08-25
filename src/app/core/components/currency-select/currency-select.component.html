@@ -1,0 +1,9 @@
+<nz-select 
+    [(ngModel)]="selectedCurrency" 
+    [nzSize]="'large'" 
+    (ngModelChange)="sendCurrency($event)"
+>
+    <nz-option nzValue="USD" nzLabel="USD"></nz-option>
+    <nz-option nzValue="EUR" nzLabel="EUR"></nz-option>
+    <nz-option nzValue="INR" nzLabel="INR"></nz-option>
+</nz-select>

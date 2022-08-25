@@ -1,0 +1,61 @@
+<div nz-row>
+  <div nz-col nzOffset="4" nzSpan="16">
+    <div class="marquee-container">
+      <marquee behavior="scroll" onmouseover="stop()" onmouseout="start()" loop="infinite" direction="left">
+        <div>
+          <ng-container *ngFor="let coin of bannerData">
+            <h5 class="coin-info">
+              {{ coin.symbol | uppercase }} 
+              <span 
+                class="is-value"
+                [ngClass]="{ 'is-low': coin.market_cap_change_percentage_24h < 0, 'is-high': coin.market_cap_change_percentage_24h > 0 }">
+                {{ coin.market_cap_change_percentage_24h }}%
+              </span>
+            </h5>
+        </ng-container>
+        </div>
+      </marquee>
+    </div>
+    <h1 class="title">Crypto tracker</h1>
+    <input 
+      nz-input 
+      nzSize="large"
+      placeholder="Crypto search" 
+      (keyup)="applyFilter($event)" 
+      style="width: 250px; margin-right: 10px;" 
+    />
+    <app-currency-select></app-currency-select>
+    <nz-table 
+      #basicTable 
+      nzSize="middle"       
+      [nzSimple]="true"
+      [nzData]="coinsData"
+    >
+      <thead>
+        <tr>
+          <th>Coin</th>
+          <th>Price</th>
+          <th>24h change</th>
+          <th>Marketcap</th>
+          <th>Last update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data" (click)="gotoDetails(data.id)">
+          <td>
+            <img class="coin-image" [src]="data.image">
+            {{ data.symbol | uppercase }}
+          </td>
+          <td>{{ data.current_price | currency:currency:true }}</td>
+          <td 
+            class="is-value"
+            [ngClass]="{ 'is-low': data.price_change_percentage_24h < 0, 'is-high': data.price_change_percentage_24h > 0 }">
+            {{ data.price_change_percentage_24h | number : '1.2-2' }}%
+          </td>
+          <td>{{ data.market_cap | currency:currency:true }}</td>
+          <td>{{ data.last_updated | date:'short'}}</td>
+        </tr>
+      </tbody>
+  </nz-table>
+  </div>
+</div>
