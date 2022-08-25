@@ -31,3 +31,23 @@
         color: #8990c5;
     }
 }
+
+.chart-filters {
+    margin-bottom: 10px;
+    .ant-btn {
+        margin-right: 10px;
+        &.ant-btn-background-ghost {
+            font-weight: 600;
+            font-size: 12px;
+            &:focus {
+                color: #ffffff;
+                border-color: #ffffff;
+            }
+            &.inactive {
+                border: none;
+                font-weight: 400;
+                color: #8990c5;
+            }
+        }
+    }
+}
