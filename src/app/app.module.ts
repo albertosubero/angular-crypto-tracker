@@ -18,6 +18,8 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CurrencySelectComponent } from './core/components/currency-select/currency-select.component';
 
 registerLocaleData(en);
@@ -40,6 +42,8 @@ registerLocaleData(en);
     NzSelectModule,
     NzInputModule,
     NzButtonModule,
+    NzBreadCrumbModule,
+    NzIconModule,
     BrowserAnimationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

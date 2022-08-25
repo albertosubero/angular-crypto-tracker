@@ -1,25 +1,13 @@
-<!-- <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 details">
-            <div class="img">
-                <img [src]="coinData?.image?.large" alt="">
-                <h3 class="text-center" style="font-size: 23px;">{{coinData?.name}}</h3>
-                <h2 [innerHtml]="coinData?.description?.en.split('. ')[0]"></h2>
-                <div class="more-detail">
-                    <span class="title">Rank: </span> <span class="value">{{coinData?.market_cap_rank}}</span><br>
-                    <span class="title">Current Price: </span> <span class="value">{{coinData?.market_data.current_price.inr | currency: currency}}</span><br>
-                    <span class="title">Market Cap: </span> <span class="value">{{coinData?.market_data.market_cap.inr | currency:currency}}</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            
-        </div>
-    </div>
-</div> -->
-<div nz-row [nzGutter]="[16]">
+<div nz-row>
     <div nz-col nzOffset="4" nzSpan="16">
         <div class="general-card">
+            <nz-breadcrumb>
+                <nz-breadcrumb-item [routerLink]="['/']" style="cursor: pointer;">
+                    <i nz-icon nzType="home"></i>
+                    Home
+                </nz-breadcrumb-item>
+                <nz-breadcrumb-item>{{ coinData?.name }} Chart</nz-breadcrumb-item>
+            </nz-breadcrumb>
             <img class="coin-avatar" [src]="coinData?.image?.large">
             <h1 class="title coin-name">
                 {{ coinData?.name }}
@@ -34,7 +22,7 @@
                     </span>
                 </span>
             </h1>
-            <!-- <p class="description" [innerHtml]="coinData?.description?.en.split('. ')[0]"></p> -->
+            <p class="description" [innerHtml]="coinData?.description?.en.split('. ')[0]"></p>
             <div class="chart-filters">
                 <button 
                     nz-button 
